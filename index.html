@@ -10,158 +10,179 @@
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Berkshire+Swash" rel="stylesheet">
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <style type="text/css">
         
         
         
-
-
-.popup {
+        body .moving-zone{
+      
+            height: 100vh;
+    width: 100%;
+    background: url(https://images.pexels.com/photos/416346/pexels-photo-416346.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     position: relative;
-    width:100%;
-    padding: 15%;
-    box-sizing: border-box;
-    border-radius: 60px 0 60px 0;
-    cursor: pointer;
-    transform-style: preserve-3d;
+            
+        }
+        
+        .popup{
+            
+        background:transparent; 
+        display:block;
+        height:20px;
+      width:70%;
+    
+      margin:auto;
+      margin-top:10%; 
+       
+        }
+        
+       .popup-text {
     color: black;
-}
-.popup:before {
-    content: '';
-    position: absolute;
-    left:5%; top:5%;
-    width:90%; height:90%;
-    border-radius: inherit;
-    background: rgba(0,0,0,.1);
-    box-shadow: 0 0 40px 20px rgba(0,0,0,.1);
-    transform: translateZ(-100px);
-}
-.popup-content {
-    background: #444;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 30px 30px 30px 30px;
-}
-.popup-text {
-    color: white;
    font-family: 'Architects Daughter', cursive;
-    font-size: 22px;
-    line-height: 30px;
-    font-weight: 100;
-    text-align: center;
-    transform: translateZ(15px);
+    font-size: 25px;
+    line-height: 45px;
+    font-weight: 100px;
+           
+    
+    transform: translateZ(10px);
 }
 .popup-text b  {
-    color: white;
-    font-weight: 300;
+    color: black;
+    font-weight: 900;
     font-family: 'Berkshire Swash', cursive;
 } 
+
+ 
         #autori {
             
-              color: white;
+              color: black;
     font-weight: 900;
         }
-      
-     
-        .buttons-coll {
-  width: 90%;
-  margin: 5px auto;
+  
+        .wrapperPrimary {
+  position: absolute;
+  top: 90%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+background-color: transparent;
+            border: none;
+            font-size: 20px;
+}
+    
+.wrapper {
+  position: absolute;
+  top: 85%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+}
+
+        .wrapperPrimary:hover{
+
+  box-shadow: 0 0 15px black;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul {
+  list-style: none;
+}
+
+
+.wrapper ul li {
+  width: auto;
+  height: auto;
+  line-height: 75px;
+  margin: 0 20px;
   text-align: center;
-}
-button {
-  margin: 1px;
-}
-.custom-btn {
-  padding: 10px 25px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 800;
-  background: transparent;
-  outline: none !important;
   cursor: pointer;
-  transition: all 0.1s ease;
-  position: relative;
-  display: inline-block;
+
+  float: left;
+  transition: all 0.5s ease;
 }
-        
-        .btn-4 {
-  width: 50%;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-            float: left;
-            color: white;
+
+
+.wrapper ul li .fa {
+  color: black;
+ 
+  transition: all 0.5s ease;
 }
-.btn-4 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
+
+
+
+.wrapper ul li:hover .fa-facebook {
+  color: #3b5998;
+  text-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
 }
-.btn-4:before, .btn-4:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: white;
-  transition: all 0.3s ease;
+
+
+
+
+.wrapper ul li:hover .fa-twitter {
+  color: #00aced;
+  text-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
 }
-.btn-4:before {
-  height: 50%;
-  width: 2px;
+
+
+
+
+.wrapper ul li:hover .fa-instagram {
+  color: #bc2a8d;
+  text-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
 }
-.btn-4:after {
-  width: 20%;
-  height: 2px;
+
+
+
+.wrapper ul li:hover .fa-google {
+  color: #dd4b39;
+  text-shadow: 0 0 15px #dd4b39;
+  transition: all 0.5s ease;
 }
-.btn-4:hover:before {height: 100%;}
-.btn-4:hover:after {width: 100%;}
-.btn-4 span:before, .btn-4 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: white;
-  transition: all 0.3s ease;
+
+
+
+.wrapper ul li:hover .fa-whatsapp {
+  color: #4dc247;
+  text-shadow: 0 0 15px #4dc247;
+  transition: all 0.5s ease;
 }
-.btn-4 span:before {
-  width: 2px;
-  height: 50%;
+
+
+
+@media screen and (max-width: 640px){
+  .wrapper {
+      width: 350px;
+  }
+  .wrapper ul li{
+      margin-top: 10px;
+  }
+  .wrapper ul li.google{
+      margin-left: 60px;
+  }
 }
-.btn-4 span:after {
-  width: 20%;
-  height: 2px;
+
+
+@media screen and (max-width: 340px){
+  .wrapper {
+      width: 150px;
+  }
+  .wrapper ul li{
+      margin:15px;
+  }
+  .wrapper ul li.google{
+      margin-left: 15px;
+  }
 }
-.btn-4 span:hover:before {height: 100%;}
-.btn-4 span:hover:after {width: 100%;}
-        
-        .btn-12 {
-  border: 2px solid white;
-  z-index: 1;
-            float: right;
-            color: white;
-}
-.btn-12:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: white;
-  transition: all 0.3s ease;
-}
-.btn-12:hover {
-  color: #fff;
-}
-.btn-12:hover:after {
-  top: 0;
-  height: 100%;
-}
-.btn-12:active {top: 2px;}
-        
+
      
         
     </style>    
@@ -171,44 +192,44 @@ button {
 
    
     
-    <div class="moving-zone">
+    <div class="moving-zone container">
     <div class="popup">
-        <div class="popup-content">
+       <div class="popup-content">
             <div class="popup-text" id="output">
             
             </div>
             <div class="popup-text">
             <b id = "autori"></b>
             </div>               
-
+ </div>
+    </div>
+</div>
          
-            <div id="myBtn" class="buttons-coll">
+            <div id="myBtn" class="buttons-coll container">
             
-            <button class="custom-btn btn-4 " onclick="setRandomColor();changeText();showShareButton()"><span id="textToChange">Click here to read a Quote</span></button>
+            <button class="wrapperPrimary shareButton" onclick="changeText();showShareButton()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
             
-            </div>
+           
             
              <div id="myBtn" class="buttons-coll">
                  
-            <button type="button" class="custom-btn btn-4 " id="accordion"  style="display: none">Share</button>  
+            <button class="custom-btn btn-4 shareButton social-toggle share" id="accordion"  style="display: none"> 
            
          
-               <div id="myDropdown" class="dropdown-content">
-                    
-                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-        <img src="https://www.gstatic.com/images/icons/material/system/2x/post_facebook_black_24dp.png" alt="Facebook" />
-    </a>
-
-              <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-        <img src="https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_24dp.png" alt="Google" />
-    </a>
-
-              <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-        <img src="https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_24dp.png" alt="Twitter" />
-    </a>
+             <div class="wrapper container">
+                 <h2>Share</h2>
+  <ul>
+    <li class="facebook"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></li>
+    <li class="twitter"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></li>
+    <li class="instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></li>
+    <li class="google"><i class="fa fa-google fa-lg" aria-hidden="true"></i></li>
+    <li class="whatsapp"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></li>
+  </ul>
 </div>
+                </button>
                   
                </div>  
+           </div>
                 
                
 
@@ -220,10 +241,8 @@ button {
 
             
            
-            <br><br><br>
-          </div>
-    </div>
-</div>
+           
+         
     
     <script
   src="https://code.jquery.com/jquery-3.2.1.js"
@@ -244,6 +263,18 @@ function changeText(){
             
             document.getElementById("accordion").style.display = "block";
         }
+        
+        $( document ).ready(function() {
+
+  $('.social').prepend('<i class="shareButton social-toggle"></i>');
+
+
+  $('.social-toggle').click(function(){
+    $(this).toggleClass('shareButton');
+    $(".social-drop").slideToggle("300");
+  })
+
+});
         
 $("#myBtn").click(function(e){
     
@@ -283,24 +314,15 @@ $("#myBtn").click(function(e){
     
 })
         
-        function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+        
 
 
 
-function setRandomColor() {
- var ngjyrat = $("body ").css("background" , getRandomColor());
-   $(".popup-content").css("background", getRandomColor());
+
  
    
    
-}
+
         
        
     
