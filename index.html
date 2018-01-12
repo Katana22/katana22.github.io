@@ -15,6 +15,11 @@
    
     <style type="text/css">
 
+    body{
+
+      background-color: #302830;
+    }
+
         
         .textBox{
  position: fixed;
@@ -30,6 +35,7 @@ border-radius: 75px 0px 74px 0px;
 -moz-border-radius: 75px 0px 74px 0px;
 -webkit-border-radius: 75px 0px 74px 0px;
 border: 0px solid #de9ede;
+background-color: white;
 
         }
 
@@ -246,7 +252,7 @@ background-color: transparent;
 
  <div id="myBtn" class="buttons-coll container">
             
-            <button class="shareButton mainButtonBefore line-1 anim-typewriter" onclick="changeText();showShareButton()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
+            <button class="shareButton mainButtonBefore line-1 anim-typewriter" onclick="changeText();showShareButton();setRandomColor()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
             
            
             
@@ -317,7 +323,7 @@ function changeText(){
 });
 
 
-$('.shareButton').click(function() {
+$('.anim-typewriter').click(function() {
     $(this).removeClass('mainButtonBefore');
     $(this).addClass('mainButton');
 });
@@ -364,13 +370,27 @@ $("#myBtn").click(function(e){
         
         
 
+      function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 
 
+function setRandomColor() {
+ var ngjyrat = $("body ").css("background-color" , getRandomColor());
+   
+ 
+   
+   
+}
+  
 
-
-       
-    
+ 
     </script>
     
 </body>
