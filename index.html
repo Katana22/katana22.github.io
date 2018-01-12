@@ -7,30 +7,77 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Berkshire+Swash" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Allura|Architects+Daughter|Berkshire+Swash" rel="stylesheet">
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <style type="text/css">
+
         
-        
-        
-        body .moving-zone{
-      
-            height: 100vh;
-    width: 100%;
-    background: url(https://images.pexels.com/photos/416346/pexels-photo-416346.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) no-repeat center center; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
-            
+        .textBox{
+ position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+-webkit-box-shadow: -1px -5px 224px 20px rgba(158,133,133,1);
+-moz-box-shadow: -1px -5px 224px 20px rgba(158,133,133,1);
+box-shadow: -1px -5px 224px 20px rgba(158,133,133,1);
+border-radius: 75px 0px 74px 0px;
+-moz-border-radius: 75px 0px 74px 0px;
+-webkit-border-radius: 75px 0px 74px 0px;
+border: 0px solid #de9ede;
+
         }
-        
-        .popup{
+
+.mainButton{
+
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+   position: fixed;
+  top: 85%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    font-size: 5vh;
+}
+
+
+
+
+.mainButtonBefore{
+
+        background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    font-size: 5vh;
+}
+
+#textToChange{
+
+  font-family: 'Allura', cursive;
+  font-weight: 400%;
+  font-size: 5vh;
+}
+
+          .popup{
             
         background:transparent; 
         display:block;
@@ -45,12 +92,12 @@
        .popup-text {
     color: black;
    font-family: 'Architects Daughter', cursive;
-    font-size: 25px;
-    line-height: 45px;
+    font-size: 1.3em;
+    line-height: 150%;
     font-weight: 100px;
            
     
-    transform: translateZ(10px);
+    transform: translateZ(10px,10px);
 }
 .popup-text b  {
     color: black;
@@ -99,7 +146,7 @@ background-color: transparent;
   width: auto;
   height: auto;
   line-height: 75px;
-  margin: 0 20px;
+  margin: 0 30px;
   text-align: center;
   cursor: pointer;
 
@@ -142,20 +189,6 @@ background-color: transparent;
 
 
 
-.wrapper ul li:hover .fa-google {
-  color: #dd4b39;
-  text-shadow: 0 0 15px #dd4b39;
-  transition: all 0.5s ease;
-}
-
-
-
-.wrapper ul li:hover .fa-whatsapp {
-  color: #4dc247;
-  text-shadow: 0 0 15px #4dc247;
-  transition: all 0.5s ease;
-}
-
 
 
 @media screen and (max-width: 640px){
@@ -173,26 +206,26 @@ background-color: transparent;
 
 @media screen and (max-width: 340px){
   .wrapper {
-      width: 150px;
+      width: 50px;
   }
   .wrapper ul li{
-      margin:15px;
+      margin:2px;
   }
   .wrapper ul li.google{
-      margin-left: 15px;
+      margin-left: 5px;
   }
 }
 
-     
+       
         
     </style>    
 </head>
 
 <body>
 
-   
-    
-    <div class="moving-zone container">
+   <div class="textBox">
+     
+<div class="moving-zone container">
     <div class="popup">
        <div class="popup-content">
             <div class="popup-text" id="output">
@@ -204,45 +237,44 @@ background-color: transparent;
  </div>
     </div>
 </div>
-         
-            <div id="myBtn" class="buttons-coll container">
+
+ <div id="myBtn" class="buttons-coll container">
             
-            <button class="wrapperPrimary shareButton" onclick="changeText();showShareButton()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
+            <button class="shareButton mainButtonBefore" onclick="changeText();showShareButton()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
             
            
             
              <div id="myBtn" class="buttons-coll">
                  
-            <button class="custom-btn btn-4 shareButton social-toggle share" id="accordion"  style="display: none"> 
+            <div class="custom-btn btn-4 shareButton social-toggle share" id="accordion"  style="display: none"> 
            
          
              <div class="wrapper container">
-                 <h2>Share</h2>
+               
   <ul>
-    <li class="facebook"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></li>
-    <li class="twitter"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></li>
-    <li class="instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></li>
-    <li class="google"><i class="fa fa-google fa-lg" aria-hidden="true"></i></li>
-    <li class="whatsapp"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></li>
+    <li class="facebook"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></li>
+    <li class="twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></li>
+    <li class="instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></li>
+   
+  
   </ul>
 </div>
-                </button>
+                </div>
                   
-               </div>  
+              
            </div>
                 
-               
 
 
-           
-               
-                 
-                 
 
-            
-           
-           
-         
+
+
+
+
+
+
+   </div>
+   
     
     <script
   src="https://code.jquery.com/jquery-3.2.1.js"
@@ -250,13 +282,15 @@ background-color: transparent;
             crossorigin="anonymous"></script>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
     
     <script>
         
-        
+         
 function changeText(){
     
-    document.getElementById("textToChange").innerHTML = "Read Another One";
+    document.getElementById("textToChange").innerHTML = "<b>Next</b>";
 }
         
         function showShareButton(){
@@ -275,6 +309,14 @@ function changeText(){
   })
 
 });
+
+
+$('.shareButton').click(function() {
+    $(this).removeClass('mainButtonBefore');
+    $(this).addClass('mainButton');
+});
+
+
         
 $("#myBtn").click(function(e){
     
@@ -319,11 +361,45 @@ $("#myBtn").click(function(e){
 
 
 
- 
-   
-   
+// set up text to print, each item in array is new line
+var aText = new Array(
+"Welcome to quote Generator Machine, find a quote that insipres you!",
+"Cick in here to start" 
 
-        
+);
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("textToChange");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();    
        
     
     </script>
