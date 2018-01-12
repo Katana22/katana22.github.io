@@ -73,9 +73,15 @@ border: 0px solid #de9ede;
 #textToChange{
 
   font-family: 'Allura', cursive;
-  font-weight: 400%;
+  font-weight: 900;
   font-size: 5vh;
 }
+
+
+
+
+
+
 
           .popup{
             
@@ -240,7 +246,7 @@ background-color: transparent;
 
  <div id="myBtn" class="buttons-coll container">
             
-            <button class="shareButton mainButtonBefore" onclick="changeText();showShareButton()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
+            <button class="shareButton mainButtonBefore line-1 anim-typewriter" onclick="changeText();showShareButton()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
             
            
             
@@ -361,45 +367,8 @@ $("#myBtn").click(function(e){
 
 
 
-// set up text to print, each item in array is new line
-var aText = new Array(
-"Welcome to quote Generator Machine, find a quote that insipres you!",
-"Cick in here to start" 
-
-);
-var iSpeed = 100; // time delay of print out
-var iIndex = 0; // start printing array at this posision
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 20; // start scrolling up at this many lines
- 
-var iTextPos = 0; // initialise text position
-var sContents = ''; // initialise contents variable
-var iRow; // initialise current row
- 
-function typewriter()
-{
- sContents =  ' ';
- iRow = Math.max(0, iIndex-iScrollAt);
- var destination = document.getElementById("textToChange");
- 
- while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
- }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
- if ( iTextPos++ == iArrLength ) {
-  iTextPos = 0;
-  iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
-  }
- } else {
-  setTimeout("typewriter()", iSpeed);
- }
-}
 
 
-typewriter();    
        
     
     </script>
