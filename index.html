@@ -15,7 +15,7 @@
    
     <style type="text/css">
     body{
-      background-color: #302830;
+      background-color: black;
     }
         
         .textBox{
@@ -65,7 +65,7 @@ background-color: white;
     font-size: 5vh;
 }
 #textToChange{
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Architects Daughter', cursive;
   font-weight: 900;
   font-size: 5vh;
 }
@@ -104,16 +104,7 @@ background-color: white;
     font-weight: 900;
         }
   
-        .wrapperPrimary {
-  position: absolute;
-  top: 90%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-background-color: transparent;
-            border: none;
-            font-size: 20px;
-}
+
     
 .wrapper {
   position: absolute;
@@ -122,12 +113,11 @@ background-color: transparent;
   transform: translate(-50%, -50%);
   width: 450px;
     
+    
 }
-        .wrapperPrimary:hover{
-  box-shadow: 0 0 15px black;
-  transition: all 0.5s ease;
+ 
             
-}
+
 .wrapper ul {
   list-style: none;
     
@@ -136,7 +126,7 @@ background-color: transparent;
   width: auto;
   height: auto;
       line-height: 75px;
-  margin: 0 30px;
+  margin: 0 25px;
   text-align: center;
   cursor: pointer;
   float: left;
@@ -205,11 +195,46 @@ background-color: transparent;
  
     transform: translateZ(10px,10px);
 }
-        }  
+          
+          .mainButtonBefore{
+        background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    font-size: 2vh;
+        } 
+          
+          .wrapper {
+  position: absolute;
+  top: 96%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+    font-size: 80%;
+        }
+          
+          .wrapper ul li {
+  width: auto;
+  height: auto;
+      line-height: 75px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+              transition: all 0.5s ease;}
+        }
         
         .twitter-share .facebook-share {
             
-            font-family: 'Berkshire Swash', cursive;
+            font-family: 'Architects Daughter'', cursive;
         }
     </style>    
 </head>
@@ -231,7 +256,7 @@ background-color: transparent;
 
  <div id="myBtn" class="buttons-coll container">
             
-            <button class="shareButton mainButtonBefore line-1 anim-typewriter" onclick="changeText();showShareButton();setRandomColor()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
+            <button class="shareButton mainButtonBefore line-1 anim-typewriter" onclick="changeText();setRandomColor()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
             
            
             
@@ -285,13 +310,7 @@ function changeText(){
             document.getElementById("accordion").style.display = "block";
         }
         
-        $( document ).ready(function() {
-  $('.social').prepend('<i class="shareButton social-toggle"></i>');
-  $('.social-toggle').click(function(){
-    $(this).toggleClass('shareButton');
-    $(".social-drop").slideToggle("300");
-  })
-});
+
 $('.anim-typewriter').click(function() {
     $(this).removeClass('mainButtonBefore');
     $(this).addClass('mainButton');
@@ -345,14 +364,24 @@ $("#myBtn").click(function(e){
   }
   return color;
 }
+        
 function setRandomColor() {
- var ngjyrat = $("body ").css("background-color" , getRandomColor());
+ var ngjyrat = getRandomColor;
+     
+     $("body").css("background-color" , getRandomColor());
    
- 
-   
+
    
 }
+    
+    
+ setTimeout(function() { 
+    $("body").css( {"transition": "background 3s linear", "-webkit-transition": "background 3s linear", "-moz-transition": "background 3s linear" });
+    $("body").css("background",get_random_color()); }
+  , 2000);
+       
         
+       
      var twitterShare = document.querySelector('[data-js="twitter-share"]');
 
 twitterShare.onclick = function(e) {
@@ -370,6 +399,8 @@ facebookShare.onclick = function(e) {
   if(facebookWindow.focus) { facebookWindow.focus(); }
     return false;
 }
+
+
  
     </script>
     
