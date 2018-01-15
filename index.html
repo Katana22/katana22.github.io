@@ -1,408 +1,399 @@
-
 <!doctype html>
 <html>
 <head>
-    <title></title>
+  <title></title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <link href="https://fonts.googleapis.com/css?family=Allura|Architects+Daughter|Berkshire+Swash" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
-    <style type="text/css">
-    body{
-      background-color: black;
-    }
-        
-        .textBox{
- position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
--webkit-box-shadow: -1px -5px 224px 20px rgba(158,133,133,1);
--moz-box-shadow: -1px -5px 224px 20px rgba(158,133,133,1);
-box-shadow: -1px -5px 224px 20px rgba(158,133,133,1);
-border-radius: 75px 0px 74px 0px;
--moz-border-radius: 75px 0px 74px 0px;
--webkit-border-radius: 75px 0px 74px 0px;
-border: 0px solid #de9ede;
-background-color: white;
-        }
-.mainButton{
-  background-color: Transparent;
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Allura|Architects+Daughter|Berkshire+Swash" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style type="text/css">
+
+  body {
+    background-color: black;
+  }
+
+
+  .mainButton{
+    background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
-   position: fixed;
-  top: 85%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-    width: 200%;
-    height: 200%;
+    position: fixed;
+    top: 85%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
     font-size: 5vh;
-}
-.mainButtonBefore{
-        background-color: Transparent;
+    font-family: 'Berkshire Swash', cursive;
+    font-weight: 900;
+    color:black;
+
+  }
+  .mainButtonBefore{
+    background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
-   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 200%;
     height: 200%;
     font-size: 5vh;
-}
-#textToChange{
-  font-family: 'Architects Daughter', cursive;
-  font-weight: 900;
-  font-size: 5vh;
-}
-          .popup{
-            
-        background:transparent; 
-        display:block;
-        height:20px;
-      width:70%;
-      margin:auto;
-      margin-top:10%; 
-       
-        }
-        
-       .popup-text {
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 900;
+    color:white;
+  }
+  #textToChange{
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 900;
+    font-size: 5vh;
+  }
+  .popup{
+
+    background:transparent; 
+    display:block;
+    height:20px;
+    width:100%;
+    margin:auto;
+    margin-top:10%; 
+
+  }
+
+  .popup-text {
     color: black;
-   font-family: 'Architects Daughter', cursive;
-    font-size: 2em;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 2.5em;
     line-height: 150%;
     font-weight: 100px;
-           width: 90%;
- 
+    width: 95%;
+
     transform: translateZ(10px,10px);
-}
-        
-       
-.popup-text b  {
+  }
+
+
+  .popup-text b  {
     color: black;
     font-weight: 900;
     font-family: 'Berkshire Swash', cursive;
-} 
- 
-        #autori {
-            
-              color: black;
+  } 
+
+  #autori {
+
+    color: black;
     font-weight: 900;
-        }
+  }
   
 
-    
-.wrapper {
-  position: absolute;
-  top: 85%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-  width: 450px;
-    
-    
-}
- 
-            
-
-.wrapper ul {
-  list-style: none;
-    
-}
-.wrapper ul li {
-  width: auto;
-  height: auto;
-      line-height: 75px;
-  margin: 0 25px;
-  text-align: center;
-  cursor: pointer;
-  float: left;
-  transition: all 0.5s ease;
-}
-.wrapper ul li .fa {
-  color: black;
- 
-  transition: all 0.5s ease;
-}
-.wrapper ul li:hover .fa-facebook {
-  color: #3b5998;
-  text-shadow: 0 0 15px #3b5998;
-  transition: all 0.5s ease;
-}
-.wrapper ul li:hover .fa-twitter {
-  color: #00aced;
-  text-shadow: 0 0 15px #00aced;
-  transition: all 0.5s ease;
-}
-
-@media screen and (max-width: 640px){
   .wrapper {
+    position: absolute;
+    top: 85%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    font-size: 120%;
+    
+    
+  }
+
+
+  .wrapper ul {
+    list-style: none;
+    
+  }
+  .wrapper ul li {
+    width: auto;
+    height: auto;
+    line-height: 75px;
+    margin: 0 25px;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    transition: all 0.5s ease;
+  }
+  .wrapper ul li .fa {
+    color: black;
+
+    transition: all 0.5s ease;
+  }
+  .wrapper ul li:hover .fa-facebook {
+    color: #3b5998;
+    text-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+  }
+  .wrapper ul li:hover .fa-twitter {
+    color: #00aced;
+    text-shadow: 0 0 15px #00aced;
+    transition: all 0.5s ease;
+  }
+  @media screen and (max-width: 640px){
+    .wrapper {
       width: 350px;
-  }
-  .wrapper ul li{
-      margin-top: 10px;
-  }
-  .wrapper ul li.google{
-      margin-left: 60px;
-  }
-}
-@media screen and (max-width: 340px){
-  .wrapper {
-      width: 50px;
-  }
-  .wrapper ul li{
-      margin:2px;
-  }
-  .wrapper ul li.google{
+    }
+    .wrapper ul li{
       margin-left: 5px;
+      font-size: 60%;
+    }
+    .wrapper ul li.google{
+      margin-left: 10px;
+    }
   }
-}
-        
-        
-      @media screen and (max-width: 640px){
-  .popup-text {
-    color: black;
-   font-family: 'Architects Daughter', cursive;
-    font-size: 1.2em;
-    line-height: 150%;
-    font-weight: 100px;
-           width: 90%;
- 
-    transform: translateZ(10px,10px);
-}
-        }  
-      @media screen and (max-width: 340px){
-  .popup-text {
-    color: black;
-   font-family: 'Architects Daughter', cursive;
-    font-size: 0.9em;
-    line-height: 150%;
-    font-weight: 100px;
-           width: 90%;
- 
-    transform: translateZ(10px,10px);
-}
-          
-          .mainButtonBefore{
-        background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    font-size: 2vh;
-        } 
-          
-          .wrapper {
-  position: absolute;
-  top: 96%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  width: 450px;
-    font-size: 80%;
-        }
-          
-          .wrapper ul li {
-  width: auto;
-  height: auto;
+  @media screen and (max-width: 340px){
+    .wrapper {
+      width: 30px;
+    }
+    .wrapper ul li{
+      margin:2px;
+    }
+    .wrapper ul li.google{
+      margin-left: 2px;
+    }
+  }
+
+
+  @media screen and (max-width: 1240px){
+    .popup-text {
+      color: black;
+      font-family: 'Architects Daughter', cursive;
+      font-size: 1.6em;
+      line-height: 150%;
+      font-weight: 100px;
+      width: 90%;
+      margin: 0 45px;
+
+
+      transform: translateZ(-50px,-50px);
+    }
+  }  
+  @media screen and (max-width: 740px){
+    .popup-text {
+      color: black;
+      font-family: 'Architects Daughter', cursive;
+      font-size: 0.9em;
+      line-height: 150%;
+      font-weight: 100px;
+      width: 90%;
+
+      transform: translateZ(10px,10px);
+    }
+
+    .mainButtonBefore{
+      background-color: Transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+      outline:none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      font-size: 2vh;
+    } 
+
+    .wrapper {
+      position: absolute;
+      top: 96%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      font-size: 80%;
+    }
+
+    .wrapper ul li {
+      width: auto;
+      height: auto;
       line-height: 75px;
-  margin: 0 10px;
-  text-align: center;
-  cursor: pointer;
-  float: left;
-              transition: all 0.5s ease;}
-        }
-        
-        .twitter-share .facebook-share {
-            
-            font-family: 'Architects Daughter'', cursive;
-        }
-    </style>    
+      margin: 0 10px;
+      text-align: center;
+      cursor: pointer;
+      float: left;
+      transition: all 0.5s ease;}
+    }
+
+    .twitter-share .facebook-share {
+
+      font-family: 'Architects Daughter'', cursive;
+
+    }
+  </style>    
 </head>
 
 <body>
 
-   <div class="textBox">
-     
-<div class="moving-zone container">
+
+
+  <div class="container">
     <div class="popup">
-       <div class="popup-content">
-            <div class="popup-text" id="output">
-            
-            </div>
-            <div class="popup-text">
-            <b id = "autori"></b>
-            </div>               
+
+      <div class="popup-text" id="output">
+
+      </div>
+      <div class="popup-text">
+        <b id = "autori"></b>
+      </div>               
+
+    </div> 
 
 
- <div id="myBtn" class="buttons-coll container">
-            
-            <button class="shareButton mainButtonBefore line-1 anim-typewriter" onclick="changeText();setRandomColor()"><span id="textToChange"><b>Click here to read a Quote</b></span></button>
-            
-           
-            
-</div>  </div>
-                  
-              
-           </div>
-                
+  </div>
 
 
 
 
- <div class="wrapper container">
-               
+
+
+  <div >
+
+   <button class="shareButton mainButtonBefore" id="buttonToPress" onclick="changeText();setRandomColor()"><span id="textToChange"><b>Click here to read a Quote</b></span></button> 
+
+
+
+ </div>  
+
+
+
+
+ <div class="wrapper">
+
   <ul>
    <li class="facebook facebook-share" data-js="facebook-share"><i class="fa fa-facebook fa-lg" aria-hidden="true" id="tweet"> Facebook</i></li>
-  
 
-<li class="twitter twitter-share" id="twitterShare" data-js="twitter-share"><i class="fa fa-twitter fa-lg" aria-hidden="true">  Twitter</i></li>
+
+   <li class="twitter twitter-share" id="twitterShare" data-js="twitter-share"><i class="fa fa-twitter fa-lg" aria-hidden="true">  Twitter</i></li>
    
    
-  
-  </ul>
+
+ </ul>
 </div>
 
 
 
 
-   </div>
-   
-    
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 
-    
-    <script>
-        
-         
-function changeText(){
-    
+
+<script
+src="https://code.jquery.com/jquery-3.2.1.js"
+integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+crossorigin="anonymous"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+
+<script>
+
+
+  function changeText(){
+
     document.getElementById("textToChange").innerHTML = "<b>Next</b>";
-}
-        
-        function showShareButton(){
-            
-            document.getElementById("accordion").style.display = "block";
-        }
-        
+  }
 
-$('.anim-typewriter').click(function() {
+
+
+  $('#buttonToPress').click(function(e) {
+     e.preventDefault();
     $(this).removeClass('mainButtonBefore');
     $(this).addClass('mainButton');
-});
-        
-$("#myBtn").click(function(e){
-    
+
+  });
+
+  $(".shareButton").click(function(e){
+
     var url = "https://talaikis.com/api/quotes/random/"
-            ;
+    ;
     
     e.preventDefault();
     
-  $.ajax({
-      
+    $.ajax({
+
       url:url,
       type:"GET",
       dataType:"json",
       success:function(data){
-          
-       
-          
-          console.log(data);
-          $.each(data,function(key , index){
-              
-              var quote = data["quote"];
-              
-              console.log(key);
-              console.log(index);
-              
-              
-            $("#output").html("<br>"+quote);
-              
-              var autori = data["author"];
-              
-               $("#autori").html("<br>"+ autori);
-             
-          })
+
+
+
+        console.log(data);
+        $.each(data,function(key , index){
+
+          var quote = data["quote"];
+
+          console.log(key);
+          console.log(index);
+
+
+          $("#output").html("<br>"+quote);
+
+          var autori = data["author"];
+
+          $("#autori").html("<br>"+ autori);
+
+        })
       }
       
+    })
+    
   })
-    
-})
-        
-   
-                                 
-      function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+
+
+
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
-  return color;
-}
-        
-function setRandomColor() {
- var ngjyrat = getRandomColor;
-     
-     $("body").css("background-color" , getRandomColor());
-   
 
+  function setRandomColor() {
+   var ngjyrat = getRandomColor;
+
+   $("body").css("background-color" , getRandomColor());
    
-}
-    
-    
+   
+ }
+
+
  setTimeout(function() { 
-    $("body").css( {"transition": "background 3s linear", "-webkit-transition": "background 3s linear", "-moz-transition": "background 3s linear" });
-    $("body").css("background",get_random_color()); }
+  $("body").css( {"transition": "background 3s linear", "-webkit-transition": "background 3s linear", "-moz-transition": "background 3s linear" });
+  $("body").css("background",get_random_color()); }
   , 2000);
-       
-        
-       
-     var twitterShare = document.querySelector('[data-js="twitter-share"]');
 
-twitterShare.onclick = function(e) {
+
+
+ var twitterShare = document.querySelector('[data-js="twitter-share"]');
+ twitterShare.onclick = function(e) {
   e.preventDefault();
   var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL , 'twitter-popup', 'height=350,width=600');
   if(twitterWindow.focus) { twitterWindow.focus(); }
-    return false;
-  }
-
+  return false;
+}
 var facebookShare = document.querySelector('[data-js="facebook-share"]');
-
 facebookShare.onclick = function(e) {
   e.preventDefault();
   var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
   if(facebookWindow.focus) { facebookWindow.focus(); }
-    return false;
+  return false;
 }
 
+</script>
 
- 
-    </script>
-    
 </body>
 </html>
