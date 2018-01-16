@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html>
 <head>
@@ -8,17 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type="text/css">
    
-
+        body {
+            
+            background-color: black;
+         background-position: center center;
+            
+           background-size: cover;
+            
+            height: 750px;
+        
+        
+        }
+        
+        h1 {
+            
+            color: white;
+            text-align: center;
+           margin: 100px 0 150px 0 ;
+            font-size: 2.5em;
+        }
+        
+        
+        
+        
     </style>    
 </head>
 
-<body>
+<body onload="getLocation()">
 
-<button onclick="getLocation()" > Test it </button>
 
-<p id="output"> </p>
-<p id="autori"> </p>
-<p id="parashikimi"> </p>
+<h1 id="output"> </h1>
+<h1 id="autori"> </h1>
+<h1 id="parashikimi"> </h1>
+    <h1 id="fahrenheit"> </h1>
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -70,7 +93,7 @@ var url = "https://fcc-weather-api.glitch.me/api/current?lon="+ longitude +"&lat
 
           var shteti = data["sys"].country;
 
-          $("#output").html("<br>"+qyteti+"," + shteti);
+          $("#output").html("<br>"+qyteti+" , " + shteti);
 
 
           var temp = data["main"].temp;
@@ -80,6 +103,9 @@ var url = "https://fcc-weather-api.glitch.me/api/current?lon="+ longitude +"&lat
           var parashikimi = data["weather"][0].main;
 
           $("#parashikimi").html("<br>"+ parashikimi);
+            
+          
+            
 
         })
       }
