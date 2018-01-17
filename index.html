@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html>
 <head>
@@ -8,40 +6,86 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type="text/css">
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+main{
+  height: 100vh;
+  background: url('https://images.pexels.com/photos/552789/pexels-photo-552789.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') fixed no-repeat;
+  background-size: cover;
+}
+#container{
+  width: 350px;
+  height: 500px;
+  background: inherit;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -250px;
+  border-radius: 8px;
+}
+#container:before{
+ width: 400px;
+  height: 550px;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+  filter: blur(10px);
+}
+
+#items {
+
+    text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+p {
+
+
+    background: 0;
+  width: 200px;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid rgba(255,255,255, 0.3);
+  margin: 20px 0;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+
+    color: rgba(255,255,255, 0.8);
+}
+
    
-        body {
-            
-            background-color: black;
-         background-position: center center;
-            
-           background-size: cover;
-            
-            height: 750px;
-        
-        
-        }
-        
-        h1 {
-            
-            color: white;
-            text-align: center;
-           margin: 100px 0 150px 0 ;
-            font-size: 2.5em;
-        }
-        
-        
-        
-        
     </style>    
 </head>
 
 <body onload="getLocation()">
 
+<main>
+<div id="container">
+    <div id="items">
 
-<h1 id="output"> </h1>
-<h1 id="autori"> </h1>
-<h1 id="parashikimi"> </h1>
-    <h1 id="fahrenheit"> </h1>
+  <p id="output"> </p>
+<p id="autori"> </p>
+<p id="parashikimi"> </p>
+  
+</div>
+</main>
+
+
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -49,77 +93,41 @@
   crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
 var latitude ;
 var longitude ;
-
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-
         
-
     } else { 
-
         alert( "Geolocation is not supported by this browser.");
     }
 }
-
-
-
 function showPosition(position) {
     var latitude =  position.coords.latitude; 
     var longitude = position.coords.longitude;
-
 var url = "https://fcc-weather-api.glitch.me/api/current?lon="+ longitude +"&lat=" + latitude
-
  $.ajax({
-
       url:url,
       type:"GET",
       dataType:"json",
       success:function(data){
-
-
-
         console.log(data);
         $.each(data,function(key , index){
-
              console.log(key);
           console.log(index);
-
-
           var qyteti = data["name"];
-
           var shteti = data["sys"].country;
-
-          $("#output").html("<br>"+qyteti+" , " + shteti);
-
-
+          $("#output").html("<br>"+qyteti+"," + shteti);
           var temp = data["main"].temp;
-
           $("#autori").html("<br>"+ temp + "&#8451;");
-
           var parashikimi = data["weather"][0].main;
-
           $("#parashikimi").html("<br>"+ parashikimi);
-            
-          
-            
-
         })
       }
       
     })
-
-
 }
-
-
-
-
-
-
 </script>
 
 </body>
