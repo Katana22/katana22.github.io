@@ -121,6 +121,18 @@ p {
         .white {fill:white}
 .gray {fill:grey}
 .yellow {fill:#fbac13}
+
+#temp {
+
+    cursor: pointer;
+    color: white;
+}
+
+#temp:hover {
+
+    cursor: pointer;
+    opacity: 0.4;
+}
    
     </style>    
 </head>
@@ -131,8 +143,8 @@ p {
 <div id="container">
     <div id="items">
         
-  <p id="output"> </p>
-<p id="autori"> </p>
+  <p id="place"> </p>
+<p id="temp"> </p>
 <p id="parashikimi"> </p>
 
 
@@ -551,17 +563,42 @@ var url = "https://fcc-weather-api.glitch.me/api/current?lon="+ longitude +"&lat
           console.log(index);
           var qyteti = data["name"];
           var shteti = data["sys"].country;
-          $("#output").html("<br>"+qyteti+" , " + shteti);
-          var temp = data["main"].temp;
-          $("#autori").html("<br>"+ temp + " &#8451;");
+          $("#place").html("<br>"+qyteti+" , " + shteti);
+
+
+          var tempInCeclius = data["main"].temp;
+
+          var tempInFahrenheit = (tempInCeclius*9/5)+32;
+
+        
+          $("#temp").html("<br>"+ tempInCeclius + " C&#176;");
+
+          var tempShown = tempInCeclius;
+
+          $("#temp").click(function(){
+
+           if(tempShown == tempInCeclius){
+
+            tempShown = tempInFahrenheit;
+
+           $("#temp").html("<br>"+ tempInFahrenheit + " &#8457;");
+             
+
+           }else{
+
+            tempShown = tempInCeclius;
+
+        
+             $("#temp").html("<br>"+ tempInCeclius + " C&#176;");
+
+           }
+
+          })
+         
+
+
           var parashikimi = data["weather"][0].main;
           $("#parashikimi").html("<br>"+ parashikimi);
-
-
-
-
-
-          
 
           if(parashikimi.toLowerCase() == "clear"){
 
@@ -584,6 +621,9 @@ var url = "https://fcc-weather-api.glitch.me/api/current?lon="+ longitude +"&lat
 
 
          $("#cloudy").css("display" , "block");
+
+
+         $("main").css({"background":"url(https://images.pexels.com/photos/414659/pexels-photo-414659.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) fixed no-repeat"});
 
           }else if(parashikimi.toLowerCase() == "rain"){
 
