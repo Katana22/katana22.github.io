@@ -1,5 +1,6 @@
 
 
+
 <!doctype html>
 <html>
 <head>
@@ -261,6 +262,44 @@ p {
     cursor: pointer;
     
 }
+
+h6{
+
+  width: 200px;
+  outline: 0;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  font-size: 8px;
+  font-weight: bold;
+    color: rgba(255,255,255, 0.8);
+   text-align: center;
+  position: absolute;
+  
+  top: 120%;
+  transform: translate(-50%,-50%);
+
+}
+
+
+.one {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.two {
+    position: relative;
+    z-index: -1;
+    display:none;
+    font-size: 15px;
+}
+/*
+.one:hover + .two {
+    top: 0px;
+}*/
+
+
    
     </style>    
 </head>
@@ -283,12 +322,16 @@ p {
 </div>
 
 <main>
+    
 <div id="container">
+   
     <div id="items">
         
   <p id="place"> </p>
 <p id="temp"> </p>
-<p id="parashikimi"> </p>
+<p id="parashikimi" class="one"><p class="two"></p></p>
+<h6>KTN22 Weather App</h6>
+
 
 
     
@@ -678,6 +721,7 @@ p {
 <script type="text/javascript">
 
 
+
     function PageLoad() {
         
     getLocation();
@@ -745,8 +789,11 @@ var url = "https://fcc-weather-api.glitch.me/api/current?lon="+ longitude +"&lat
            }
 
           })
-         
 
+        var pershkrimiLageshtires = data["main"].humidity;  
+        var pershkrimiEres = data["wind"].speed;
+          $(".two").html("<br>"+"Wind = " + pershkrimiEres + " km/h" + "<br>" + "humidity = " + pershkrimiLageshtires + " %" );
+         
 
           var parashikimi = data["weather"][0].main;
           $("#parashikimi").html("<br>"+ parashikimi);
@@ -813,6 +860,11 @@ $("main").css({"background":"url(https://images.pexels.com/photos/268782/pexels-
    
 
 }
+
+$('.one').on('click',function(){
+    $(this).next('.two').slideToggle();
+});
+
 </script>
 
 </body>
