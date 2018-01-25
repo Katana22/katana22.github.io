@@ -3,52 +3,61 @@
 <head>
 	<title>Wikipedia Viewer</title>
 </head>
+
+<style type="text/css">
+
+.title {
+
+	color: blue;
+	padding: 20px;
+}
+
+
+
+
+</style>
 <body>
 
-<div id="article"></div>
+	<input type="text" name="search" id="mySearch"></input>
+	<button id="search">Search</button>
+	<div id="article"></div>
 
 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+
 	<script type="text/javascript">
 		
 
-function randomNum(){for (var i = 0; i <= 10; i++) {
-         	console.log(i)
-         }}
+		$("#search").on("click", function(){
+
+			var mySearch = $("#mySearch").val();
+
+			$.ajax({
+				type: "GET",
+				url: "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ mySearch + "&format=json&callback=?",
+				contentType: "application/json; charset=utf-8",
+				async: false,
+				dataType: "json",
+				success:function(data , status , jqXHR){
+
+                   $("#article").empty(); 
+
+					for(var i=0 ; i <= data[1].length - 1 ; i++ ){ 
+
+						$("#article").append("<div class = 'title'> " + data[1][i] + "</div>"+ "<br>" + "<div class='description' >" + data[2][i] + "</div>" + "<br>" + "<div class='link'>" + data[3][i]+ "</div>" + "<br>");
+					}
+
+             
+
+				}
+
+			})
+		})
 
 
-
-   $(document).ready(function(){
- 
-
-
-    $.ajax({
-        type: "GET",
-        url: "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=Tesla&callback=?",
-        contentType: "application/json; charset=utf-8",
-        async: false,
-        dataType: "json",
-        success:function(data){
-      
-        $.each(data,function(key , index){
-
-
-     for(var i = 0 ; i<=10 ; i++){
-
-          var titleList = data["query"].search[i].snippet;
-
-          
-
-}
-           
-
-      });
-  }
-    });
-});
 
 
 	</script>
