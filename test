@@ -12,16 +12,356 @@
 	padding: 20px;
 }
 
+ html,body {height: 100%;}
+            body {padding: 0px; margin:0px; background-color:#463239
+
+            	; background-position: center; background-size: cover; background-attachment: fixed; background-repeat: no-repeat;}
+
+            .search-wrapper {
+                position: absolute;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                top:25%;
+                left:50%;
+            }
+            .search-wrapper.active {}
+
+            .search-wrapper .input-holder {
+                overflow: hidden;
+                height: 70px;
+                background: rgba(255,255,255,0);
+                border-radius:9px;
+                position: relative;
+                width:170px;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+            .search-wrapper.active .input-holder {
+                border-radius: 50px;
+                width:450px;
+                background: rgba(0,0,0,0.5);
+                -webkit-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                -moz-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+            }
+
+            .search-wrapper .input-holder .search-input {
+                width:100%;
+                height: 50px;
+                padding:0px 70px 0 20px;
+                opacity: 0;
+                position: absolute;
+                top:0px;
+                left:0px;
+                background: transparent;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                border:none;
+                outline:none;
+                font-family:"Open Sans", Arial, Verdana;
+                font-size: 25px;
+                font-weight: 400;
+                line-height: 20px;
+                color:#FFF;
+                -webkit-transform: translate(0, 60px);
+                -moz-transform: translate(0, 60px);
+                transform: translate(0, 60px);
+                -webkit-transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                -moz-transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+
+                -webkit-transition-delay: 0.3s;
+                -moz-transition-delay: 0.3s;
+                transition-delay: 0.3s;
+            }
+            .search-wrapper.active .input-holder .search-input {
+                opacity: 1;
+                -webkit-transform: translate(0, 10px);
+                -moz-transform: translate(0, 10px);
+                transform: translate(0, 10px);
+            }
+
+            .search-wrapper .input-holder .search-icon {
+                width:70px;
+                height:70px;
+                border:none;
+                border-radius:50px;
+                background: #FFF;
+                padding:0px;
+                outline:none;
+                position: relative;
+                z-index: 2;
+                float:right;
+                cursor: pointer;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+            .search-wrapper.active .input-holder .search-icon {
+                width: 50px;
+                height:50px;
+                margin: 10px;
+                border-radius: 30px;
+            }
+            .search-wrapper .input-holder .search-icon span {
+                width:22px;
+                height:22px;
+                display: inline-block;
+                vertical-align: middle;
+                position:relative;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                transform: rotate(45deg);
+                -webkit-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+                -moz-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+                transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+
+            }
+            .search-wrapper.active .input-holder .search-icon span {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+            .search-wrapper .input-holder .search-icon span::before, .search-wrapper .input-holder .search-icon span::after {
+                position: absolute;
+                content:'';
+            }
+            .search-wrapper .input-holder .search-icon span::before {
+                width: 4px;
+                height: 11px;
+                left: 9px;
+                top: 18px;
+                border-radius: 2px;
+                background: red;
+            }
+            .search-wrapper .input-holder .search-icon span::after {
+                width: 14px;
+                height: 14px;
+                left: 0px;
+                top: 0px;
+                border-radius: 16px;
+                border: 4px solid red;
+            }
+
+            .search-wrapper .close {
+                position: absolute;
+                z-index: 1;
+                top:24px;
+                right:20px;
+                width:25px;
+                height:25px;
+                cursor: pointer;
+                -webkit-transform: rotate(-180deg);
+                -moz-transform: rotate(-180deg);
+                transform: rotate(-180deg);
+                -webkit-transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+                -moz-transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+                transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+                -webkit-transition-delay: 0.2s;
+                -moz-transition-delay: 0.2s;
+                transition-delay: 0.2s;
+            }
+            .search-wrapper.active .close {
+                right:-50px;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                transform: rotate(45deg);
+                -webkit-transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                -moz-transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+                -webkit-transition-delay: 0.5s;
+                -moz-transition-delay: 0.5s;
+                transition-delay: 0.5s;
+            }
+            .search-wrapper .close::before, .search-wrapper .close::after {
+                position:absolute;
+                content:'';
+                background: red;
+                border-radius: 2px;
+            }
+            .search-wrapper .close::before {
+                width: 5px;
+                height: 25px;
+                left: 10px;
+                top: 0px;
+            }
+            .search-wrapper .close::after {
+                width: 25px;
+                height: 5px;
+                left: 0px;
+                top: 10px;
+            }
+            .search-wrapper .result-container {
+                width: 100%;
+                position: absolute;
+                top:80px;
+                text-align: center;
+                font-family: "Open Sans", Arial, Verdana;
+                font-size: 18px;
+                display:none;
+                color:white;
+            }
 
 
+            @media screen and (max-width: 560px) {
+                .search-wrapper.active .input-holder {width:200px;}
+            }
+
+/* this is for the header effect */
+
+
+.Iam {
+  position: absolute;
+  margin: auto;
+  right: 30%;
+  font: normal 40px/50px Montserrat, sans-serif;
+  color: white;
+
+}
+.Iam p {
+  height: 50px;
+  float: left;
+  margin-right: 0.3em;
+}
+.Iam b {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+  top: 40px;
+}
+.Iam .innerIam {
+  display: inline-block;
+  color: #7FB285;
+  position: relative;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+
+
+/*animation*/
+-webkit-animation:move 5s;
+   -moz-animation:move 5s;
+    -ms-animation:move 5s;
+     -o-animation:move 5s;
+        animation:move 5s;
+/*animation-iteration-count*/
+-webkit-animation-iteration-count:infinite;
+   -moz-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+     -o-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+/*animation-delay*/
+-webkit-animation-delay:1s;
+   -moz-animation-delay:1s;
+    -ms-animation-delay:1s;
+     -o-animation-delay:1s;
+        animation-delay:1s;
+}
+@keyframes move{
+0%  { top: 0px; }
+20% { top: -50px; }
+40% { top: -100px; }
+60% { top: -150px; }
+80% { top: -200px; }
+}
+
+@-webkit-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+@-moz-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+@-o-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+@keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+
+
+/* this is text scramble */
+
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100'
+html, body {
+  font-family :'Roboto Mono', monospace;
+  background : #212121;
+  height :100%;
+
+  }
+.container{
+   position: fixed;
+    bottom: 5%;
+    width: 100%;
+    left: 85%;
+
+  }
+
+.text{
+  font-weight: 100;
+  font-size:18px;
+  color : #FAFAFA;
+
+  }
+.dud{
+  color: #757575;
+}
 
 </style>
 <body>
 
-	<input type="text" name="search" id="mySearch"></input>
-	<button id="search">Search</button>
-	<div id="article"></div>
+<div class="Iam">
 
+<p>This is</p>
+<b>
+  <div class="innerIam">
+    leggera<br /> 
+    a theme in progress<br />
+    built on bootstrap<br />
+    how I learn stuff<br />
+    how we do it
+    </div>
+</b>
+
+</div>
+
+	 <form onsubmit="submitFn(this, event);">
+            <div class="search-wrapper">
+                <div class="input-holder">
+                    <input type="text" class="search-input" id="mySearch" placeholder="Type to search" />
+                    <button class="search-icon" id="search" onclick="searchToggle(this, event);"><span></span></button>
+                </div>
+                <span class="close" onclick="searchToggle(this, event);"></span>
+                <div class="result-container" id="article">
+
+                </div>
+
+            </div>
+        </form>
+
+       <div class="container">
+
+	<div class="text"></div>
+ </div> 
 
 	<script
 	src="https://code.jquery.com/jquery-3.3.1.js"
@@ -57,7 +397,118 @@
 			})
 		})
 
+  function searchToggle(obj, evt){
+            var container = $(obj).closest('.search-wrapper');
 
+            if(!container.hasClass('active')){
+                  container.addClass('active');
+                  evt.preventDefault();
+            }
+            else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+                  container.removeClass('active');
+                  // clear input
+                  container.find('.search-input').val('');
+                  // clear and hide result container when we press close
+                  container.find('.result-container').fadeOut(100, function(){$(this).empty();});
+            }
+        }
+
+        function submitFn(obj, evt){
+            value = $(obj).find('.search-input').val().trim();
+
+            _html = "Yup yup! Your search text sounds like this: ";
+            if(!value.length){
+                _html = "Yup yup! Add some text friend :D";
+            }
+            else{
+                _html += "<b>" + value + "</b>";
+            }
+
+            $(obj).find('.result-container').html('<span>' + _html + '</span>');
+            $(obj).find('.result-container').fadeIn(100);
+
+            evt.preventDefault();
+        }
+
+/* this is text scramble */
+
+
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+    this.update = this.update.bind(this)
+  }
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="dud">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+
+// ——————————————————————————————————————————————————
+// Example
+// ——————————————————————————————————————————————————
+
+const phrases = [
+  'Made by',
+  'Edri Çabiri',
+  'Katana22'
+]
+
+const el = document.querySelector('.text')
+const fx = new TextScramble(el)
+
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 800)
+  })
+  counter = (counter + 1) % phrases.length
+}
+
+next()
 
 
 	</script>
