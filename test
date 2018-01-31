@@ -3,12 +3,44 @@
 <head>
 	<title>Wikipedia Viewer</title>
 </head>
-
+<link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
 <style type="text/css">
 
+a {
+    
+    color: inherit;
+    text-decoration:none;
+}
+
+
+
+.title{
+
+	font-family: 'Merriweather Sans';
+	font-size: 30px;
+	font-weight: 800;
+	line-height: 38px;
+	letter-spacing: -4px;
+	
+
+}
+
+
+.description{
+
+color: #50413c;
+	font-family: 'Merriweather';
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 30px;
+	margin-bottom: 16px;
+	
+
+}
 .articleContainer{
 position: relative;
-	top: 20%;
+	top: 10%;
 	left: 15%;
 	text-align: center;
 	border-radius: 2px 2px 2px 2px;
@@ -19,6 +51,7 @@ position: relative;
     -ms-user-select: none;
     user-select: none;
     color: #454545;
+
 }
 
 .cardContainer {
@@ -26,23 +59,26 @@ position: relative;
  width:70%;
   height:150px;
   float:left;
-  background-color:#F1FFFA; 
-  margin:15px 15px;
+  background-color:#f6f1ed; 
+  margin:10px 10px;
   	-webkit-box-shadow: 13px 18px 115px -27px rgba(0,0,0,0.55);
 -moz-box-shadow: 13px 18px 115px -27px rgba(0,0,0,0.55);
 box-shadow: 13px 18px 115px -27px rgba(0,0,0,0.55);
+cursor: pointer;
 }
 
 .cardContainer:hover,.cardContainer:focus {
 
-	width:70%;
+width:70%;
   height:150px;
   float:left;
-  cursor: pointer;
-  margin:15px 15px;
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-  background-color: rgba(	147 , 	183 , 	190 , 0.4);
+  background-color:#f6f1ed; 
+  margin:10px 10px;
+border-radius: 0px 0px 0px 0px;
+-moz-border-radius: 0px 0px 0px 0px;
+-webkit-border-radius: 0px 0px 0px 0px;
+border: 1px dotted #785964;
+cursor: pointer
 
   	
 }
@@ -51,7 +87,7 @@ box-shadow: 13px 18px 115px -27px rgba(0,0,0,0.55);
 
 .articleContainer{
 position: relative;
-	top: 40%;
+	top: 25%;
 	left: 15%;
 	text-align: center;
 	border-radius: 2px 2px 2px 2px;
@@ -145,6 +181,31 @@ position: relative;
             	color: #785964;
             	opacity: 0.7;
             }
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-animation: autofill 0s forwards;
+    animation: autofill 0s forwards;
+}
+
+@keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}
+
+@-webkit-keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}
+
             .search-wrapper .input-holder .search-icon {
                 width:70px;
                 height:70px;
@@ -271,13 +332,12 @@ position: relative;
                 .search-wrapper.active .input-holder {width:200px;}
             }
 
-/* this is for the header effect */
 
 
 .Iam {
   position: relative;
   margin: 20px;
-   
+   padding: 5px;
   font: normal 40px/50px Montserrat, sans-serif;
  
   font-size: 60px;
@@ -295,20 +355,33 @@ text-align: center;
  
   font-size: 20px;
 font-family: 'Futura';
-text-shadow: 0 0 5px #785964, 0 0 10px #785964, 0 0 20px #785964, 0 0 30px #785964, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
+text-shadow: 0 0 5px #785964;
 text-align: center;
 
 }
 
 .Iam b {
   position: relative;
-  margin: 20px;
+  margin: 10px;
    
   font: normal 10px/15px Montserrat, sans-serif;
  
   font-size: 20px;
 font-family: 'Futura';
-text-shadow: 0 0 5px #785964, 0 0 10px #785964, 0 0 20px red, 0 0 30px #785964, 0 0 40px red, 0 0 55px red, 0 0 75px red;
+text-shadow: 0 0 5px #785964;
+text-align: center;
+
+}
+
+.Iam b:hover {
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  font: normal 10px/15px Montserrat, sans-serif;
+ 
+  font-size: 20px;
+font-family: 'Futura';
+text-shadow: 0 0 5px #785964, 0 0 10px #785964, 0 0 20px #785964, 0 0 30px #785964, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
 text-align: center;
 
 }
@@ -331,7 +404,7 @@ html, body {
   }
 
 .text{
-  font-weight: 100;
+  font-weight: 600;
   font-size:18px;
   color :#785964;
 
@@ -347,7 +420,7 @@ html, body {
 
 <p>Click on search for your query</p>
 
-<p>or <b>Here</b> for a Random one</p>
+<p>or <b><a href="https://en.wikipedia.org/wiki/Special:Random">Here</a></b> for a Random one</p>
 
 
 </div>
@@ -382,6 +455,8 @@ html, body {
 
 	<script type="text/javascript">
 		
+        
+
 
 		$("#search").on("click", function(){
 
@@ -399,7 +474,15 @@ html, body {
 
 					for(var i=0 ; i <= data[1].length - 1 ; i++ ){ 
 
-						$("#article").append("<div class='cardContainer'>" + "<div class = 'title'> " + data[1][i] + "</div>"+ "<br>" + "<div class='description' >" + data[2][i] + "</div>" + "<br>" + "<div class='link'>" + data[3][i]+ "</div>" + "<br>" + "</div>");
+						var link = data[3][i];
+
+						function redirect()
+                         {
+                        var url = link;
+                       window.location(url);
+                          }
+
+						$("#article").append("<a href = "+data[3][i]+" >"+"<div class='cardContainer' onclick = 'redirect()' >" + "<div class = 'title'> " + data[1][i] + "</div>"+ "<br>" + "<div class='description' >" + data[2][i] + "</div>" + "<br>" + "</div>"+"</a>");
 					}
 
              
@@ -408,6 +491,8 @@ html, body {
 
 			})
 		})
+
+
 
   function searchToggle(obj, evt){
             var container = $(obj).closest('.search-wrapper');
@@ -441,8 +526,6 @@ html, body {
 
             evt.preventDefault();
         }
-
-/* this is text scramble */
 
 
 class TextScramble {
@@ -498,10 +581,6 @@ class TextScramble {
     return this.chars[Math.floor(Math.random() * this.chars.length)]
   }
 }
-
-// ——————————————————————————————————————————————————
-// Example
-// ——————————————————————————————————————————————————
 
 const phrases = [
   'Made by',
