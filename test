@@ -4,6 +4,7 @@
 	<title>Wikipedia Viewer</title>
 </head>
 <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:800' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
 <style type="text/css">
 
@@ -17,11 +18,11 @@ a {
 
 .title{
 
-	font-family: 'Merriweather Sans';
+	font-family: 'Playfair Display', serif;
 	font-size: 30px;
 	font-weight: 800;
-	line-height: 38px;
-	letter-spacing: -4px;
+	line-height: 30px;
+	letter-spacing: 1px;
 	
 
 }
@@ -33,7 +34,7 @@ color: #50413c;
 	font-family: 'Merriweather';
 	font-size: 15px;
 	font-weight: 500;
-	line-height: 30px;
+	line-height: 20px;
 	margin-bottom: 16px;
 	
 
@@ -57,7 +58,7 @@ position: relative;
 .cardContainer {
 
  width:70%;
-  height:150px;
+  height:180px;
   float:left;
   background-color:#f6f1ed; 
   margin:10px 10px;
@@ -70,15 +71,18 @@ cursor: pointer;
 .cardContainer:hover,.cardContainer:focus {
 
 width:70%;
-  height:150px;
+  height:180px;
   float:left;
   background-color:#f6f1ed; 
   margin:10px 10px;
 border-radius: 0px 0px 0px 0px;
 -moz-border-radius: 0px 0px 0px 0px;
 -webkit-border-radius: 0px 0px 0px 0px;
-border: 1px dotted #785964;
+border: 3px solid #785964;
 cursor: pointer
+	-webkit-box-shadow: 13px 18px 115px -20px #785964;
+-moz-box-shadow: 13px 18px 115px -20px #785964;
+box-shadow: 13px 18px 115px -22px #785964;
 
   	
 }
